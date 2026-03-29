@@ -2,11 +2,12 @@ from flask import Flask,url_for,redirect,render_template,request
 
 app=Flask(__name__)
 
-@app.route("/",method=['GET','POST'])
+@app.route("/",methods=["GET","POST"])
 def home():
     if request.method=="POST":
         name=request.form["username"]
-        return f"hello {name}"
+        age=request.form["age"]
+        return f"hello {name} you are {age} years old"
     return render_template("index.html")
 
 
