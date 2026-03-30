@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
+app.config['SECRET_KEY'] = 'mysecretkey'
+
 db = SQLAlchemy()
 
 def create_app():

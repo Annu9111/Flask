@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template,session
 from .models import User
 from . import db
 
@@ -19,3 +19,6 @@ def add_user(name):
 def get_users():
     users = User.query.all()
     return "<br>".join([user.name for user in users])
+
+@main.route('/login', methods=['GET', 'POST'])
+def login():
